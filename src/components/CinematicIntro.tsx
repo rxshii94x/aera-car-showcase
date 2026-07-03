@@ -593,59 +593,7 @@ export default function CinematicIntro({
         </div>
       </div>
 
-      {/* Loading Overlay - remains visible on top (z-50) until the video is fully ready to play */}
-      <AnimatePresence>
-        {!videoReady && (
-          <motion.div
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute inset-0 z-50 bg-black flex flex-col items-center justify-center pointer-events-none"
-          >
-            <div className="flex flex-col items-center justify-center gap-8">
-              {/* Luxury Brand Header */}
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-col items-center gap-4 select-none"
-              >
-                <span className="text-3xl font-display font-light tracking-[0.7em] text-white pl-[0.7em]">
-                  A É R A
-                </span>
-                <span className="text-[9px] font-mono tracking-[0.4em] text-neutral-500 uppercase">
-                  ESTABLISHED 2026
-                </span>
-              </motion.div>
 
-              {/* Fine Progress Indicator Bar */}
-              <div className="w-[180px] h-[1px] bg-neutral-900 overflow-hidden relative">
-                <motion.div
-                  className="absolute left-0 top-0 bottom-0 bg-[#D5001C] shadow-[0_0_8px_rgba(213,0,28,0.5)]"
-                  initial={{ width: "0%" }}
-                  animate={{ width: `${Math.round(loadProgress * 100)}%` }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                />
-              </div>
-
-              {/* Premium Typography Percentage Counter */}
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4, duration: 1 }}
-                className="flex flex-col items-center gap-3"
-              >
-                <span className="text-[11px] font-display font-medium tracking-[0.3em] text-neutral-300">
-                  SYSTEM BOOTING • {Math.round(loadProgress * 100)}%
-                </span>
-                <span className="text-[9px] font-mono tracking-[0.2em] text-neutral-600 uppercase">
-                  PRELOADING IMMERSIVE ENGINE
-                 </span>
-               </motion.div>
-             </div>
-           </motion.div>
-         )}
-       </AnimatePresence>
      </div>
    );
  }
