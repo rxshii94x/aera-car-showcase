@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Outfit:wght@200;300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-porsche: "Neue Haas Grotesk Display", "Helvetica Now Display", "Suisse Int'l", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-druk: "Druk Condensed Super", "Druk Condensed", "Bebas Neue", sans-serif;
+  --font-neue: "Neue Haas Grotesk", "Neue Haas Grotesk Display", "Inter", sans-serif;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000 !important;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global Font Rendering Enhancements */
+*, *::before, *::after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1, "tnum" 1;
+  font-kerning: normal;
+}
+
+/* Premium Motion Language Micro-Interactions */
+a, button, [role="button"] {
+  transition: opacity 350ms cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 350ms cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 350ms cubic-bezier(0.22, 1, 0.36, 1),
+              color 350ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Precision Click/Active State Feedback */
+a:active, button:active, [role="button"]:active {
+  transform: scale(0.98);
+}
+
+/* Elegant Focus Indicator */
+a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
+  outline: 2px solid #D5001C !important; /* Premium Porsche Red high-contrast outline */
+  outline-offset: 3px;
+}
+
+/* Premium Idle Breathing Animation */
+@keyframes premium-idle-breath {
+  0%, 100% {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.006); /* Subtly below 1% scale (0.6% scaling) */
+  }
+}
+
+.app-idle .cta-breath-eligible {
+  animation: premium-idle-breath 5s ease-in-out infinite !important;
+}
+
+/* ─── Premium Accessibility Preference System ──────────────────────── */
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  /* Stop UI transitions and breathing motions */
+  a, button, [role="button"], .cta-breath-eligible, .ending-cta-container, .ending-porsche-logo {
+    transition: none !important;
+    animation: none !important;
+  }
+  .app-idle .cta-breath-eligible {
+    animation: none !important;
+  }
+}
+
+/* Contrast Preference */
+@media (prefers-contrast: more) {
+  /* Boost text contrast */
+  .text-neutral-500 {
+    color: #404040 !important;
+  }
+  .text-neutral-700 {
+    color: #1c1c1c !important;
+  }
+  .text-[#767676] {
+    color: #333333 !important;
+  }
+  .text-[#D8D8D8] {
+    color: #ffffff !important;
+  }
+  .border-neutral-200\/40 {
+    border-color: rgba(0, 0, 0, 0.4) !important;
+  }
+}
+
+/* Reduced Transparency Preference */
+@media (prefers-reduced-transparency: reduce) {
+  /* Solidify transparent overlays */
+  .bg-black\/80, .bg-black\/50 {
+    background-color: #000000 !important;
+  }
+  .bg-white\/80 {
+    background-color: #ffffff !important;
+  }
+  .border-neutral-200\/40 {
+    border-color: #111111 !important;
+  }
+}
+
+/* Forced Colors Mode */
+@media (forced-colors: active) {
+  button, a {
+    outline: 2px solid ButtonText !important;
+  }
+}
+
+
+

@@ -1,0 +1,6 @@
+{
+  "name": "Automotive Hero Landing Page",
+  "description": "A high-end, premium luxury automotive hero section with editorial typography, minimal floating navigation, custom video stage, and micro-interactions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
